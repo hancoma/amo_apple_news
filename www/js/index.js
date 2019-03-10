@@ -30,8 +30,10 @@ var app = {
     },
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+         show_web();
     },
     onDeviceReady: function() {
+
         receivedEvent('deviceready');
    
     }
@@ -56,7 +58,7 @@ document.addEventListener("offline", function(){
    ref.close();
 
    }, false);   
-    show_web(); 
+    
   app_version_check();
  
             onmain();
@@ -434,7 +436,7 @@ function gopage (page) {
 function show_web() {
    var uuid=device.uuid;
   var ref2 = cordova.InAppBrowser.open('https://console-mobile.cloudbric.com', '_blank', 'location=no');
-    console.log('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
+  //  console.log('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
    ref2.addEventListener('loadstart', inAppBrowserbLoadStart);
    ref2.addEventListener('loadstop', inAppBrowserbLoadStop);
   // ref2.addEventListener('loaderror', inAppBrowserbLoadError);
