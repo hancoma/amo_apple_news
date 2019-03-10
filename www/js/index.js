@@ -165,7 +165,7 @@ xhr.onload = function(){
      var token_data = JSON.parse(response);
      app_token=token_data.result_info.device_token;
 
-            console.log("token : "+app_token);
+            alert("token : "+app_token);
 
            app_version_check();
 
@@ -211,7 +211,7 @@ xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , 
        } 
 function app_version_check() {
   
-   var uuid=device.uuid;
+   
  $.ajax({
     url: "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version="+app_version,
     beforeSend: function(xhr) { 
@@ -246,7 +246,15 @@ function app_version_check() {
       
      } else {
    
-      show_web();
+var ref2 = cordova.InAppBrowser.open('https://console-mobile.cloudbric.com', '_blank', 'location=no');
+  //  console.log('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
+   ref2.addEventListener('loadstart', inAppBrowserbLoadStart);
+   ref2.addEventListener('loadstop', inAppBrowserbLoadStop);
+  // ref2.addEventListener('loaderror', inAppBrowserbLoadError);
+   ref2.addEventListener("backbutton", exit_show);
+   //ref.addEventListener("backbutton", function () { alert("asd"); exit;})
+   ref2.addEventListener('exit', close_show);
+  // body...
 
      }
     },
