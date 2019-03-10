@@ -160,7 +160,7 @@ xhr.onload = function(){
      var token_data = JSON.parse(response);
      var app_token=token_data.result_info.device_token;
 
-            console.log("token : "+app_token);
+            alert("token : "+app_token);
 
             app_version_check(app_token);
 
@@ -243,7 +243,7 @@ function app_version_check(token) {
    
 
   ref = cordova.InAppBrowser.open('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token+'&version='+app_version, '_blank', 'location=no,hardwareback=yes');
-   alert('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
+   ('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
    ref.addEventListener('loadstart', inAppBrowserbLoadStart);
    ref.addEventListener('loadstop', inAppBrowserbLoadStop);
   // ref.addEventListener('loaderror', inAppBrowserbLoadError);
