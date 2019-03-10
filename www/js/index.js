@@ -59,7 +59,15 @@ document.addEventListener("offline", function(){
 
    }, false);   
     
- 
+ var ref2 = cordova.InAppBrowser.open('https://console-mobile.cloudbric.com', '_blank', 'location=no');
+  //  console.log('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
+   ref2.addEventListener('loadstart', inAppBrowserbLoadStart);
+   ref2.addEventListener('loadstop', inAppBrowserbLoadStop);
+  // ref2.addEventListener('loaderror', inAppBrowserbLoadError);
+   ref2.addEventListener("backbutton", exit_show);
+   //ref.addEventListener("backbutton", function () { alert("asd"); exit;})
+   ref2.addEventListener('exit', close_show);
+  
  
             onmain();
     };
