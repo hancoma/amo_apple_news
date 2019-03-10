@@ -153,7 +153,7 @@ var xhr = new XMLHttpRequest();
 
 xhr.open('POST', 'https://api.cloudbric.com/v2/mobile/device/');
 xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.setRequestHeader('X-Cloudbric-Key', 'zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks');
+xhr.setRequestHeader('XCloudbricKey', 'zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks');
 xhr.onload = function(){
             var response = this.responseText;
             console.log(response);
@@ -243,7 +243,7 @@ function app_version_check(token) {
    
 
   ref = cordova.InAppBrowser.open('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token+'&version='+app_version, '_blank', 'location=no,hardwareback=yes');
-   ('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
+  alert ('https://console-mobile.cloudbric.com?uuid='+uuid+'&token='+app_token);
    ref.addEventListener('loadstart', inAppBrowserbLoadStart);
    ref.addEventListener('loadstop', inAppBrowserbLoadStop);
   // ref.addEventListener('loaderror', inAppBrowserbLoadError);
