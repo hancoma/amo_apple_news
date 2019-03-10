@@ -56,7 +56,7 @@ document.addEventListener("offline", function(){
    ref.close();
 
    }, false);    
- 
+  app_version_check();
             onmain();
     };
 
@@ -148,9 +148,26 @@ push.on('error', function(e) {
 
 
     console.log(data_json);
-var app_token="";
-app_version_check(app_token);
 
+
+var xhr = new XMLHttpRequest();
+
+xhr.open('POST', 'https://api.cloudbric.com/v2/mobile/device/');
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader('X-Cloudbric-Key', 'zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks');
+xhr.onload = function(){
+            var response = this.responseText;
+            console.log(response);
+     var token_data = JSON.parse(response);
+     var app_token=token_data.result_info.device_token;
+
+            console.log("token : "+app_token);
+
+           
+
+};
+
+xhr.send(JSON.stringify({"app_data": {"uuid": uuid ,"registration_id": reg_id , "reg_id": reg_id , "cordova" : cordova , "model" : model , "platform" : platform , "version" : version , "manufacturer" : manufacturer , "isVirtual" : isVirtual , "serial" : serial  }}));
 
    }
 
@@ -184,12 +201,12 @@ app_version_check(app_token);
       var data=data;
       token=data;
          console.log("token : "+token);
-    app_version_check(token);
+   
 
    })
        } 
-function app_version_check(token) {
-  app_token=token;
+function app_version_check() {
+  
    var uuid=device.uuid;
  $.ajax({
     url: "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version="+app_version,
