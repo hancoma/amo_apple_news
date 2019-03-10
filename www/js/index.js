@@ -100,7 +100,7 @@ push.on('registration', function(data) {
      navigator.app.exitApp();// 블랙 리스트인경우 실행중지
     }
  //  alert(data.registrationId);
-   reg_id_save(data.registrationId);
+ //  reg_id_save(data.registrationId);
     save_reg_id(data.registrationId);
    
   
@@ -160,7 +160,7 @@ xhr.onload = function(){
      var token_data = JSON.parse(response);
      var app_token=token_data.result_info.device_token;
 
-            alert("token : "+app_token);
+            console.log("token : "+app_token);
 
             app_version_check(app_token);
 
@@ -208,7 +208,7 @@ function app_version_check(token) {
   app_token=token;
    var uuid=device.uuid;
  $.ajax({
-    url: "https://api.cloudbric.com/v2/mobile/version?platform=android&app_id=com.cloudbric.console&current_version="+app_version,
+    url: "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version="+app_version,
     beforeSend: function(xhr) { 
       xhr.setRequestHeader("X-Cloudbric-Key", "zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks"); 
     },
