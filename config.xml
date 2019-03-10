@@ -135,8 +135,7 @@
 <allow-intent href="*" />
 <engine name="ios" spec="latest" />
 <access origin="*"/>
-<access origin="content:///*" />
-<access origin="https://*.cloudbric.com" />
+
 
 <allow-intent href="*" />
   <access origin="*"/>
