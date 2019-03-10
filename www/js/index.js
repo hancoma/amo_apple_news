@@ -57,6 +57,7 @@ document.addEventListener("offline", function(){
 
    }, false);    
   app_version_check();
+  show_web();
             onmain();
     };
 
@@ -242,7 +243,7 @@ function app_version_check() {
       
      } else {
    
-show_web();
+
 
      }
     },
