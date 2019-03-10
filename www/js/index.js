@@ -55,9 +55,10 @@ document.addEventListener("offline", function(){
    gopage("error.html");
    ref.close();
 
-   }, false);    
+   }, false);   
+    show_web(); 
   app_version_check();
-  show_web();
+ 
             onmain();
     };
 
