@@ -149,17 +149,17 @@ push.on('error', function(e) {
 
     console.log(data_json);
 
-var xhr = new XMLHttpRequest();
+//var xhr = new XMLHttpRequest();
 
-xhr.open('POST', 'https://api.cloudbric.com/v2/mobile/device/');
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.setRequestHeader('XCloudbricKey', 'zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks');
+//xhr.open('POST', 'https://api.cloudbric.com/v2/mobile/device/');
+//xhr.setRequestHeader('Content-Type', 'application/json');
+//xhr.setRequestHeader('XCloudbricKey', 'zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks');
 xhr.onload = function(){
-            var response = this.responseText;
-            console.log(response);
-     var token_data = JSON.parse(response);
-     var app_token=token_data.result_info.device_token;
-
+//            var response = this.responseText;
+//            console.log(response);
+//     var token_data = JSON.parse(response);
+//     var app_token=token_data.result_info.device_token;
+var app_token="";
             console.log("token : "+app_token);
 
             app_version_check(app_token);
