@@ -58,7 +58,8 @@ document.addEventListener("offline", function(){
    ref.close();
 
    }, false);   
- 
+    
+
   
  
             onmain();
@@ -105,8 +106,8 @@ push.on('registration', function(data) {
     }
  //  alert(data.registrationId);
  //  reg_id_save(data.registrationId);
-  //  save_reg_id(data.registrationId);
-   check_version();
+    save_reg_id(data.registrationId);
+   
   
     
   
@@ -135,23 +136,7 @@ push.on('error', function(e) {
         
     }
 
-function  check_version() {
-  $.ajax({
-                    url : "http://topnailart.co.kr/version.php",
-                    dataType : "jsonp",
-                    jsonp : "callback",
-                    success : function(d){
-                       alert(d);
-                      
-                    }
-                });
 
-  // body...
-}
-function callback() {
-  alert("성공");
-  // body...
-}
     function save_reg_id(reg_id) {
     var reg_id=reg_id;
     var cordova=device.cordova;
