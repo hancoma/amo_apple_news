@@ -67,7 +67,7 @@ document.addEventListener("offline", function(){
 
     function onmain() {
 document.addEventListener("backbutton", exit_app, false); 
-
+  save_reg_id();
          var reg_id=device.uuid;
        // 기기 번호 검출 
        
@@ -106,7 +106,7 @@ push.on('registration', function(data) {
     }
  //  alert(data.registrationId);
  //  reg_id_save(data.registrationId);
-    save_reg_id(data.registrationId);
+  
    
   
     
