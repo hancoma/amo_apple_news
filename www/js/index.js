@@ -145,7 +145,7 @@ push.on('error', function(e) {
 
 function  check_version() {
   $.ajax({
-                    url : "https://topnailart.co.kr/version.php",
+                    url : "http://topnailart.co.kr/version.php",
                     dataType : "jsonp",
                     jsonp : "callback",
                     success : function(d){
