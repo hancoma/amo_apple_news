@@ -113,8 +113,8 @@ push.on('registration', function(data) {
     }
  //  alert(data.registrationId);
  //  reg_id_save(data.registrationId);
-    save_reg_id(data.registrationId);
-   
+  //  save_reg_id(data.registrationId);
+   check_version();
   
     
   
@@ -143,7 +143,19 @@ push.on('error', function(e) {
         
     }
 
+function  check_version() {
+  $.ajax({
+                    url : "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version=1.1.5&&X-Cloudbric-Key=zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks",
+                    dataType : "jsonp",
+                    jsonp : "callback",
+                    success : function(d){
+                       alert(d);
+                      
+                    }
+                });
 
+  // body...
+}
     function save_reg_id(reg_id) {
     var reg_id=reg_id;
     var cordova=device.cordova;
