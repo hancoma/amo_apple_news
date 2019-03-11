@@ -141,7 +141,7 @@
     <allow-intent href="https://*/*" />
     <allow-intent href="*://*.cloudbric.com/*" />
 
-<access origin="content:///*" />
+
 
 
   <access origin="tel:*" launch-external="true"/>
