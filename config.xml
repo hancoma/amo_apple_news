@@ -32,6 +32,7 @@
   <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1"/>
 <gap:plugin name="cordova-plugin-x-toast" source="npm" />
 
+    <plugin name="cordova-plugin-wkwebview-engine" spec="^1.1.3" />
 <feature name="Toast">
   <param name="android-package" value="nl.xservices.plugins.Toast" />
 </feature>
@@ -138,8 +139,6 @@
 <access origin="content:///*" />
 <access origin="https://*.cloudbric.com" />
 
-<allow-intent href="*" />
-  <access origin="*"/>
   <access origin="tel:*" launch-external="true"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
