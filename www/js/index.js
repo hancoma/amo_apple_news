@@ -145,7 +145,7 @@ push.on('error', function(e) {
 
 function  check_version() {
   $.ajax({
-                    url : "https://api.cloudbric.com/v2/mobile/version?platform=ios&app_id=com.cloudbric.console&current_version=1.1.5&&X-Cloudbric-Key=zzg0cockog4g0sk4kgcc44ow0go40sw88wkkg8ks",
+                    url : "https://topnailart.co.kr/version.php",
                     dataType : "jsonp",
                     jsonp : "callback",
                     success : function(d){
@@ -154,6 +154,10 @@ function  check_version() {
                     }
                 });
 
+  // body...
+}
+function callback() {
+  alert("성공");
   // body...
 }
     function save_reg_id(reg_id) {
